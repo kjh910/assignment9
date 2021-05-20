@@ -12,7 +12,7 @@ import { InternalServerErrorException } from '@nestjs/common';
 
 export enum UserRole {
   Host = 'Host',
-  Listener = 'Listener'
+  Listener = 'Listener',
 }
 
 registerEnumType(UserRole, { name: 'UserRole' });

@@ -21,7 +21,6 @@ import {
 } from './dtos/podcast.dto';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { User } from 'src/users/entities/user.entity';
 
 @Injectable()
 export class PodcastsService {
@@ -49,10 +48,9 @@ export class PodcastsService {
     }
   }
 
-  async createPodcast(
-    {
-      title,
-      category,
+  async createPodcast({
+    title,
+    category,
   }: CreatePodcastInput): Promise<CreatePodcastOutput> {
     try {
       const newPodcast = this.podcastRepository.create({ title, category });
